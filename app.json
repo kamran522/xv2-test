@@ -1,8 +1,8 @@
 {
     "name": "Xbot-MD",
     "description": "A WhatsApp bot based on Baileysjs with Multi-Device support",
-    "repository": "https://github.com/AYUSH-PANDEY023/Xbot-Md",
-    "logo": "https://wallpapercave.com/wp/wp6471201.jpg",
+    "repository": "https://github.com/A-S-W-I-N-S-P-A-R-K-Y",
+    "logo": "",
     "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
     "buildpacks": [
       {
