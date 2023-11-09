@@ -44,15 +44,15 @@ const axios = require('axios');
 let cc = config.SESSION_ID.replace(/X-BOT-MD:/g, "");
 async function MakeSession() {
   try {
-    if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+    if (!fs.existsSync(__dirname + '/library/auth_info_baileys/creds.json')) {
       if (cc.length < 30) {
         const response = await axios.get('https://paste.c-net.org/' + cc);
         const data = response.data;
         const jsonData = JSON.stringify(data, null, 2);
-        await fs.writeFileSync(__dirname + '/auth_info_baileys/creds.json', jsonData, 'utf8');
+        await fs.writeFileSync(__dirname + '/library/auth_info_baileys/creds.json', jsonData, 'utf8');
       } else {
         var c = Buffer.from(cc, 'base64').toString('utf-8');
-        await fs.writeFileSync(__dirname + '/auth_info_baileys/creds.json', c, 'utf8');
+        await fs.writeFileSync(__dirname + '/library/auth_info_baileys/creds.json', c, 'utf8');
       }
     }
   } catch (err) {
@@ -76,7 +76,7 @@ const getVersionWaweb = () => {
   //end
 //------------------------------------------------------
 let { version, isLatest } = await fetchLatestBaileysVersion()
-const {  state, saveCreds } =await useMultiFileAuthState(`./auth_info_baileys`)
+const {  state, saveCreds } =await useMultiFileAuthState(`./library/auth_info_baileys`)
     const msgRetryCounterCache = new NodeCache() // for retry message, "waiting message"
     const Xbot = makeWASocket({
         logger: pino({ level: 'silent' }),
