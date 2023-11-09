@@ -48,7 +48,6 @@
         "pino": "^8.14.1",
         "pm2": "^5.2.0",
         "qrcode": "^1.5.3",
-        "qrcode-reader": "^1.0.4",
         "set-cookie": "^0.0.4",
         "translate-google-api": "^1.0.4",
         "translatte": "^3.0.1",
