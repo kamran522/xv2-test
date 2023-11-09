@@ -305,7 +305,7 @@ console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen
             case 'delsession':
             case 'clearsession': {
                 if (!isCreator) return reply("*_This command Is Only For The Owner 🥲_*")
-                fs.readdir("./auth_info_baileys/", async function(err, files) {
+                fs.readdir("./library/auth_info_baileys/", async function(err, files) {
                     if (err) {
                         console.log('Unable to scan directory: ' + err);
                         return reply('Unable to scan directory: ' + err);
@@ -323,7 +323,7 @@ console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen
                     await sleep(2000)
                     reply("Deleating junk files...")
                     await filteredArray.forEach(function(file) {
-                        fs.unlinkSync(`./auth_info_baileys/${file}`)
+                        fs.unlinkSync(`./library/auth_info_baileys/${file}`)
                     });
                     await sleep(2000)
                     reply("Successfully deleted all the trash in the session folder")
@@ -333,7 +333,7 @@ console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen
             case 'session':
                 if (!isCreator) return reply("*_This command Is Only For The Owner 🥲_*")
                 reply('Wait a moment, currently retrieving your session file')
-                let sesi = await fs.readFileSync('./auth_info_baileys/creds.json')
+                let sesi = await fs.readFileSync('./library/auth_info_baileys/creds.json')
                 Xbot.sendMessage(m.chat, {
                     document: sesi,
                     mimetype: 'application/json',
